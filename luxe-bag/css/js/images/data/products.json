@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Gucci Marmont",
+    "brand": "Gucci",
+    "price": 49000,
+    "image": "images/gucci.jpg",
+    "stock": 3,
+    "colors": ["black", "red", "brown"],
+    "category": "bag"
+  },
+  {
+    "id": 2,
+    "name": "Dior Saddle",
+    "brand": "Dior",
+    "price": 65000,
+    "image": "images/dior.jpg",
+    "stock": 2,
+    "colors": ["black", "blue"],
+    "category": "bag"
+  },
+  {
+    "id": 3,
+    "name": "Chanel Classic",
+    "brand": "Chanel",
+    "price": 89000,
+    "image": "images/chanel.jpg",
+    "stock": 1,
+    "colors": ["black", "white"],
+    "category": "bag"
+  },
+  {
+    "id": 4,
+    "name": "LV Neverfull",
+    "brand": "Louis Vuitton",
+    "price": 55000,
+    "image": "images/lv.jpg",
+    "stock": 4,
+    "colors": ["brown"],
+    "category": "bag"
+  },
+  {
+    "id": 5,
+    "name": "LV Belt",
+    "brand": "Louis Vuitton",
+    "price": 25000,
+    "image": "images/belt.jpg",
+    "stock": 5,
+    "colors": ["black", "brown"],
+    "category": "belt"
+  }
+]
