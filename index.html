@@ -3,112 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ดาวน์โหลดวิดีโอ</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #00b4d8, #90e0ef);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      color: #0077b6;
-    }
-
-    .container {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      max-width: 500px;
-      width: 90%;
-    }
-
-    input[type="text"] {
-      padding: 10px;
-      width: 80%;
-      border: 1px solid #0077b6;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    button {
-      padding: 10px 20px;
-      background-color: #0077b6;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    .download-btn {
-      display: block;
-      margin: 10px auto;
-      padding: 10px;
-      background-color: #0096c7;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      width: 80%;
-    }
-
-    .ads {
-      margin-top: 30px;
-      padding: 15px;
-      background-color: #caf0f8;
-      border-radius: 10px;
-    }
-  </style>
+  <title>LUXE BAG SHOP</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <div class="container">
-    <h1>ดาวน์โหลดวิดีโอออนไลน์</h1>
-    <input type="text" id="videoURL" placeholder="วางลิงก์วิดีโอที่นี่">
-    <br>
-    <button onclick="fetchVideo()">ดึงวิดีโอ</button>
-    <div id="result"></div>
-    <div class="ads">
-      <p>พื้นที่โฆษณาของคุณ ✨</p>
-    </div>
+
+<!-- 🔝 HEADER -->
+<header class="header">
+  <div class="logo">LUXE BAG</div>
+  <nav>
+    <a href="#">หน้าแรก</a>
+    <a href="#">สินค้า</a>
+    <a href="#">ติดต่อ</a>
+  </nav>
+</header>
+
+<!-- 🎞️ BANNER -->
+<section class="banner">
+  <h1>LUXURY COLLECTION</h1>
+  <p>Gucci / Dior / Chanel / Louis Vuitton</p>
+  <button>SHOP NOW</button>
+</section>
+
+<!-- 🛍️ CATEGORY -->
+<section class="categories">
+  <h2>หมวดหมู่</h2>
+  <div class="cat-grid">
+    <div class="cat">Gucci</div>
+    <div class="cat">Dior</div>
+    <div class="cat">Chanel</div>
+    <div class="cat">Louis Vuitton</div>
+    <div class="cat">Belt (เข็มขัด)</div>
+    <div class="cat">Waist Bag (คาดเอว)</div>
   </div>
+</section>
 
-  <script>
-  const backendUrl = 'https://yt-api-production.up.railway.app/api/getVideo'; // ✅ ลิงก์ backend จริง // ← เปลี่ยนเป็นลิงก์ Railway ของคุณ
+<!-- 👜 PRODUCTS -->
+<section class="products">
+  <h2>สินค้าแนะนำ</h2>
 
-    async function fetchVideo() {
-      const url = document.getElementById('videoURL').value.trim();
-      const result = document.getElementById('result');
-      if (!url) {
-        result.innerHTML = '<p style="color:red;">กรุณาวางลิงก์ก่อน</p>';
-        return;
-      }
+  <div class="grid">
 
-      result.innerHTML = '<p>กำลังโหลด...</p>';
+    <div class="card">
+      <img src="images/gucci.jpg" alt="">
+      <h3>Gucci Marmont</h3>
+      <p>฿49,000</p>
+      <button onclick="addToCart('Gucci Marmont')">เพิ่มลงตะกร้า</button>
+    </div>
 
-      try {
-        const res = await fetch(`${backendUrl}?url=${encodeURIComponent(url)}`);
-        const data = await res.json();
+    <div class="card">
+      <img src="images/dior.jpg" alt="">
+      <h3>Dior Saddle</h3>
+      <p>฿65,000</p>
+      <button onclick="addToCart('Dior Saddle')">เพิ่มลงตะกร้า</button>
+    </div>
 
-        if (!data.formats || data.formats.length === 0) {
-          result.innerHTML = '<p style="color:red;">ไม่พบตัวเลือกวิดีโอ</p>';
-          return;
-        }
+    <div class="card">
+      <img src="images/chanel.jpg" alt="">
+      <h3>Chanel Classic</h3>
+      <p>฿89,000</p>
+      <button onclick="addToCart('Chanel Classic')">เพิ่มลงตะกร้า</button>
+    </div>
 
-        let html = '<h3>เลือกระดับความคมชัด:</h3>';
-        data.formats.forEach(f => {
-          if (f.ext === 'mp4' && f.url) {
-            html += `<a class="download-btn" href="${f.url}" target="_blank">${f.format_note || ''} - ${f.height || ''}p</a>`;
-          }
-        });
-        result.innerHTML = html;
+    <div class="card">
+      <img src="images/lv.jpg" alt="">
+      <h3>LV Neverfull</h3>
+      <p>฿55,000</p>
+      <button onclick="addToCart('LV Neverfull')">เพิ่มลงตะกร้า</button>
+    </div>
 
-      } catch (err) {
-        result.innerHTML = `<p style="color:red;">เกิดข้อผิดพลาด: ${err.message}</p>`;
-      }
-    }
-  </script>
+    <div class="card">
+      <img src="images/belt.jpg" alt="">
+      <h3>LV Belt</h3>
+      <p>฿25,000</p>
+      <button onclick="addToCart('LV Belt')">เพิ่มลงตะกร้า</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- 🛒 CART PREVIEW -->
+<section class="cart-box">
+  <h2>ตะกร้าสินค้า</h2>
+  <ul id="cart-list"></ul>
+</section>
+
+<!-- 📞 FOOTER -->
+<footer class="footer">
+  <p>© 2026 LUXE BAG SHOP</p>
+</footer>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
