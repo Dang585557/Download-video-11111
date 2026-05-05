@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #000;
+}
+
+.logo {
+  font-size: 24px;
+  color: gold;
+  font-weight: bold;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+/* BANNER */
+.banner {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(#000, #222);
+}
+
+.banner h1 {
+  font-size: 36px;
+}
+
+.banner button {
+  padding: 10px 20px;
+  background: gold;
+  border: none;
+  cursor: pointer;
+}
+
+/* CATEGORY */
+.categories {
+  padding: 20px;
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.cat {
+  background: #1a1a1a;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+button {
+  background: gold;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* PRODUCT DETAIL */
+.product-detail {
+  padding: 30px;
+}
+
+.product-container {
+  display: flex;
+  gap: 30px;
+}
+
+.product-images img {
+  width: 300px;
+}
+
+.thumbs img {
+  width: 60px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.product-info {
+  max-width: 400px;
+}
+
+.price {
+  font-size: 24px;
+  color: gold;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+.buy {
+  background: green;
+  color: white;
+}
+
+/* CART */
+.cart-page {
+  padding: 20px;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-table th,
+.cart-table td {
+  border-bottom: 1px solid #333;
+  padding: 10px;
+}
+
+.checkout {
+  padding: 20px;
+}
+
+.checkout input,
+.checkout textarea,
+.checkout select {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  margin-top: 30px;
+}
