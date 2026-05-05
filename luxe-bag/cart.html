@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ตะกร้าสินค้า</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- 🔝 HEADER -->
+<header class="header">
+  <div class="logo">LUXE BAG</div>
+  <nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="product.html">สินค้า</a>
+  </nav>
+</header>
+
+<!-- 🛒 CART -->
+<section class="cart-page">
+  <h1>ตะกร้าสินค้า</h1>
+
+  <table class="cart-table">
+    <thead>
+      <tr>
+        <th>สินค้า</th>
+        <th>ราคา</th>
+        <th>จำนวน</th>
+        <th>รวม</th>
+      </tr>
+    </thead>
+    <tbody id="cart-items">
+      <!-- JS จะใส่ข้อมูลตรงนี้ -->
+    </tbody>
+  </table>
+
+  <h2 id="total">รวมทั้งหมด: ฿0</h2>
+</section>
+
+<!-- 🧾 CHECKOUT -->
+<section class="checkout">
+  <h2>กรอกข้อมูลสั่งซื้อ</h2>
+
+  <form onsubmit="submitOrder(event)">
+    <input type="text" placeholder="ชื่อ" required>
+    <input type="tel" placeholder="เบอร์โทร" required>
+    <textarea placeholder="ที่อยู่" required></textarea>
+
+    <label>วิธีชำระเงิน:</label>
+    <select>
+      <option>เก็บปลายทาง (COD)</option>
+      <option>โอนเงิน</option>
+      <option>QR Payment</option>
+    </select>
+
+    <button type="submit">ยืนยันคำสั่งซื้อ</button>
+  </form>
+</section>
+
+<footer class="footer">
+  <p>© 2026 LUXE BAG SHOP</p>
+</footer>
+
+<script src="js/script.js"></script>
+
+<script>
+function submitOrder(e){
+  e.preventDefault();
+  alert("สั่งซื้อเรียบร้อยแล้ว!");
+}
+</script>
+
+</body>
+</html>
