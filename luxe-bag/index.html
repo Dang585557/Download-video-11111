@@ -1,100 +1,48 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUXE BAG SHOP</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Bag - กระเป๋าแบรนด์เนมชั้นนำ</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">Luxe Bag</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li><a href="product.html">สินค้า</a></li>
+                    <li><a href="cart.html">ตะกร้า</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-<!-- 🔝 HEADER -->
-<header class="header">
-  <div class="logo">LUXE BAG</div>
-  <nav>
-    <a href="#">หน้าแรก</a>
-    <a href="#">สินค้า</a>
-    <a href="#">ติดต่อ</a>
-  </nav>
-</header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>ยินดีต้อนรับสู่ Luxe Bag</h2>
+                <p>กระเป๋าแบรนด์เนมชั้นนำ ราคาพิเศษ</p>
+                <a href="product.html" class="btn btn-primary">ดูสินค้า</a>
+            </div>
+        </section>
 
-<!-- 🎞️ BANNER -->
-<section class="banner">
-  <h1>LUXURY COLLECTION</h1>
-  <p>Gucci / Dior / Chanel / Louis Vuitton</p>
-  <button>SHOP NOW</button>
-</section>
+        <section class="featured-products">
+            <div class="container">
+                <h2>สินค้าแนะนำ</h2>
+                <div class="products-grid" id="featured-products">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
 
-<!-- 🛍️ CATEGORY -->
-<section class="categories">
-  <h2>หมวดหมู่</h2>
-  <div class="cat-grid">
-    <div class="cat">Gucci</div>
-    <div class="cat">Dior</div>
-    <div class="cat">Chanel</div>
-    <div class="cat">Louis Vuitton</div>
-    <div class="cat">Belt (เข็มขัด)</div>
-    <div class="cat">Waist Bag (คาดเอว)</div>
-  </div>
-</section>
+    <footer>
+        <p>&copy; 2024 Luxe Bag. สงวนลิขสิทธิ์ทั้งหมด</p>
+    </footer>
 
-<!-- 👜 PRODUCTS -->
-<section class="products">
-  <h2>สินค้าแนะนำ</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="images/gucci.jpg" alt="">
-      <h3>Gucci Marmont</h3>
-      <p>฿49,000</p>
-      <button onclick="addToCart('Gucci Marmont')">เพิ่มลงตะกร้า</button>
-    </div>
-
-    <div class="card">
-      <img src="images/dior.jpg" alt="">
-      <h3>Dior Saddle</h3>
-      <p>฿65,000</p>
-      <button onclick="addToCart('Dior Saddle')">เพิ่มลงตะกร้า</button>
-    </div>
-
-    <div class="card">
-      <img src="images/chanel.jpg" alt="">
-      <h3>Chanel Classic</h3>
-      <p>฿89,000</p>
-      <button onclick="addToCart('Chanel Classic')">เพิ่มลงตะกร้า</button>
-    </div>
-
-    <div class="card">
-      <img src="images/lv.jpg" alt="">
-      <h3>LV Neverfull</h3>
-      <p>฿55,000</p>
-      <button onclick="addToCart('LV Neverfull')">เพิ่มลงตะกร้า</button>
-    </div>
-
-    <div class="card">
-      <img src="images/belt.jpg" alt="">
-      <h3>LV Belt</h3>
-      <p>฿25,000</p>
-      <button onclick="addToCart('LV Belt')">เพิ่มลงตะกร้า</button>
-    </div>
-
-  </div>
-</section>
-
-<!-- 🛒 CART PREVIEW -->
-<section class="cart-box">
-  <h2>ตะกร้าสินค้า</h2>
-  <ul id="cart-list"></ul>
-</section>
-
-<!-- 📞 FOOTER -->
-<footer class="footer">
-  <p>© 2026 LUXE BAG SHOP</p>
-</footer>
-
-<script src="js/script.js"></script>
-
+    <script src="js/script.js"></script>
 </body>
 </html>

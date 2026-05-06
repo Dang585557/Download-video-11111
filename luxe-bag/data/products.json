@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "Gucci Marmont Bag",
+        "brand": "gucci",
+        "price": 45000,
+        "image": "gucci.jpg",
+        "description": "กระเป๋า Gucci Marmont สีดำ หนังแท้ คุณภาพสูง"
+    },
+    {
+        "id": 2,
+        "name": "Dior Saddle Bag",
+        "brand": "dior",
+        "price": 52000,
+        "image": "dior.jpg",
+        "description": "กระเป๋า Dior Saddle สีน้ำตาล หนังแท้ดีไซน์สวย"
+    },
+    {
+        "id": 3,
+        "name": "Louis Vuitton Speedy",
+        "brand": "lv",
+        "price": 48000,
+        "image": "lv.jpg",
+        "description": "กระเป๋า Louis Vuitton Speedy สีน้ำตาล ลายมอนโนแกรม"
+    },
+    {
+        "id": 4,
+        "name": "Gucci Leather Belt",
+        "brand": "gucci",
+        "price": 15000,
+        "image": "belt.jpg",
+        "description": "เข็มขัด Gucci หนังแท้ สีดำ หัวเข็มขัดทองแท้"
+    }
+]

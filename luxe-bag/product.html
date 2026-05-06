@@ -1,89 +1,51 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Detail</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สินค้า - Luxe Bag</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="logo">Luxe Bag</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li><a href="product.html">สินค้า</a></li>
+                    <li><a href="cart.html">ตะกร้า</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-<!-- 🔝 HEADER -->
-<header class="header">
-  <div class="logo">LUXE BAG</div>
-  <nav>
-    <a href="index.html">หน้าแรก</a>
-    <a href="#">สินค้า</a>
-  </nav>
-</header>
+    <main>
+        <section class="products-section">
+            <div class="container">
+                <h1>สินค้าทั้งหมด</h1>
+                
+                <div class="filters">
+                    <label for="brand-filter">เลือกแบรนด์:</label>
+                    <select id="brand-filter">
+                        <option value="">ทั้งหมด</option>
+                        <option value="gucci">Gucci</option>
+                        <option value="dior">Dior</option>
+                        <option value="lv">Louis Vuitton</option>
+                    </select>
+                </div>
 
-<!-- 👜 PRODUCT DETAIL -->
-<section class="product-detail">
+                <div class="products-grid" id="products-container">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <div class="product-container">
+    <footer>
+        <p>&copy; 2024 Luxe Bag. สงวนลิขสิทธิ์ทั้งหมด</p>
+    </footer>
 
-    <!-- รูปสินค้า -->
-    <div class="product-images">
-      <img id="main-image" src="images/gucci.jpg">
-      <div class="thumbs">
-        <img src="images/gucci.jpg" onclick="changeImage(this)">
-        <img src="images/dior.jpg" onclick="changeImage(this)">
-        <img src="images/chanel.jpg" onclick="changeImage(this)">
-      </div>
-    </div>
-
-    <!-- รายละเอียด -->
-    <div class="product-info">
-      <h1>Gucci Marmont Bag</h1>
-      <p class="price">฿49,000</p>
-
-      <p>สภาพ: มือสอง สวย 95%</p>
-      <p>อุปกรณ์: ถุงผ้า + กล่อง</p>
-
-      <!-- 🎨 สี -->
-      <label>เลือกสี:</label>
-      <select id="color">
-        <option>ดำ</option>
-        <option>แดง</option>
-        <option>น้ำตาล</option>
-      </select>
-
-      <!-- 🔢 จำนวน -->
-      <label>จำนวน:</label>
-      <input type="number" id="qty" value="1" min="1">
-
-      <!-- 🛒 ปุ่ม -->
-      <div class="buttons">
-        <button onclick="addToCart('Gucci Marmont')">เพิ่มลงตะกร้า</button>
-        <button class="buy">ซื้อทันที</button>
-      </div>
-
-      <p class="stock">สินค้าคงเหลือ: 3 ชิ้น</p>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- 🛒 CART -->
-<section class="cart-box">
-  <h2>ตะกร้า</h2>
-  <ul id="cart-list"></ul>
-</section>
-
-<footer class="footer">
-  <p>© 2026 LUXE BAG SHOP</p>
-</footer>
-
-<script src="js/script.js"></script>
-
-<script>
-function changeImage(img){
-  document.getElementById("main-image").src = img.src;
-}
-</script>
-
+    <script src="js/script.js"></script>
 </body>
 </html>
