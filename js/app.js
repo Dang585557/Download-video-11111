@@ -137,7 +137,33 @@ function addToCart(productId) {
     }
     
     saveCart();
-    alert(`${product.name} เพิ่มลงตะกร้าแล้ว!`);
+    showNotification(`${product.name} เพิ่มลงตะกร้าแล้ว!`);
+}
+
+// Show notification
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: linear-gradient(135deg, #D4AF37, #E8C547);
+        color: #050505;
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        font-weight: 600;
+        z-index: 2000;
+        animation: slideInRight 0.3s ease-out;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    `;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.3s ease-out';
+        setTimeout(() => notification.remove(), 300);
+    }, 2000);
 }
 
 // Carousel Functionality
@@ -284,16 +310,119 @@ function setupCheckoutListener() {
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', function() {
             if (cart.length === 0) {
-                alert('ตะกร้าของคุณว่างเปล่า');
+                showNotification('ตะกร้าของคุณว่างเปล่า');
                 return;
             }
             
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            alert(`ขอบคุณสำหรับการสั่งซื้อ!\n\nรวมทั้งสิ้น: ฿${total.toLocaleString('th-TH')}\n\n(นี่เป็นเว็บไซต์ตัวอย่าง)`);
+            showNotification(`ขอบคุณสำหรับการสั่งซื้อ! รวมทั้งสิ้น: ฿${total.toLocaleString('th-TH')}`);
             
             cart = [];
             saveCart();
-            renderCart();
+            setTimeout(() => renderCart(), 500);
         });
     }
 }
+
+// Initialize smooth scroll and animations
+function initializeAnimations() {
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Observe product cards
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        observer.observe(card);
+    });
+
+    // Observe feature cards
+    document.querySelectorAll('.feature-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        observer.observe(card);
+    });
+}
+
+// Add animations on page load
+window.addEventListener('load', () => {
+    initializeAnimations();
+});
+
+// Smooth link navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') prevSlide();
+    if (e.key === 'ArrowRight') nextSlide();
+});
+
+// Add animation styles
+const animationStyles = document.createElement('style');
+animationStyles.textContent = `
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideOutRight {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(animationStyles);
