@@ -14,20 +14,32 @@
     </div>
 
     <!-- Header -->
-    <header>
+    <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">LUXE</a>
+                <a href="index.html" class="logo">
+                    <span class="logo-text">LUXE</span>
+                    <span class="logo-sub">BOUTIQUE</span>
+                </a>
+                
                 <ul class="nav-menu">
                     <li><a href="index.html">หน้าหลัก</a></li>
-                    <li><a href="shop.html">ร้านค้า</a></li>
+                    <li><a href="shop.html">สินค้า</a></li>
+                    <li><a href="#brands">แบรนด์</a></li>
+                    <li><a href="#new">คอลเลกชันใหม่</a></li>
                     <li><a href="#about">เกี่ยวกับเรา</a></li>
+                    <li><a href="#reviews">รีวิว</a></li>
                     <li><a href="#contact">ติดต่อเรา</a></li>
                 </ul>
+                
                 <div class="nav-icons">
-                    <a href="#" title="ค้นหา"><i class="fas fa-search"></i></a>
-                    <a href="#" title="บัญชี"><i class="fas fa-user"></i></a>
-                    <a href="cart.html" title="ตะกร้า" style="position: relative;">
+                    <a href="#" class="icon-link" title="ค้นหา">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="#" class="icon-link" title="บัญชี">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="cart.html" class="icon-link cart-icon" title="ตะกร้า">
                         <i class="fas fa-shopping-bag"></i>
                         <span class="cart-count" id="cart-badge">0</span>
                     </a>
@@ -37,67 +49,132 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>LUXURY BEYOND TIME</h1>
-            <p>รวมคอลเลกชันกระเป๋าแบรนด์เนมแท้ 100%</p>
-            <p style="font-size: 1rem; margin-bottom: 2rem;">GUCCI • LOUIS VUITTON • CHANEL • DIOR</p>
-            <a href="shop.html" class="btn">เลือกซื้อสินค้า</a>
+    <section class="hero-section">
+        <div class="hero-slider-container">
+            <!-- Hero Slide -->
+            <div class="hero-slide active">
+                <div class="hero-content-wrapper">
+                    <!-- Left Content -->
+                    <div class="hero-left">
+                        <div class="hero-text">
+                            <h1 class="hero-title">
+                                <span class="title-line">LUXURY</span>
+                                <span class="title-line">BEYOND TIME</span>
+                            </h1>
+                            <p class="hero-subtitle">รวมคอลเลกชันกระเป๋าแบรนด์เนมแท้ 100%</p>
+                            <p class="hero-brands">GUCCI, LOUIS VUITTON, CHANEL, DIOR และอื่นๆ</p>
+                            <a href="shop.html" class="btn btn-gold">SHOP NOW</a>
+                        </div>
+                        
+                        <!-- Slide Navigation -->
+                        <div class="slide-nav">
+                            <button class="slide-btn prev" onclick="prevSlide()">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="slide-btn next" onclick="nextSlide()">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Content - Product Display -->
+                    <div class="hero-right">
+                        <div class="product-showcase">
+                            <!-- Luxury Display Stand -->
+                            <div class="display-stand">
+                                <div class="stand-top"></div>
+                                <div class="stand-middle"></div>
+                                <div class="stand-bottom"></div>
+                            </div>
+
+                            <!-- Products Carousel -->
+                            <div class="products-carousel">
+                                <div class="carousel-item active" data-index="0">
+                                    <img src="images/gucci.png" alt="Gucci Bag" class="carousel-image">
+                                </div>
+                                <div class="carousel-item" data-index="1">
+                                    <img src="images/lv.png" alt="Louis Vuitton Bag" class="carousel-image">
+                                </div>
+                                <div class="carousel-item" data-index="2">
+                                    <img src="images/chanel.png" alt="Chanel Bag" class="carousel-image">
+                                </div>
+                                <div class="carousel-item" data-index="3">
+                                    <img src="images/dior.png" alt="Dior Bag" class="carousel-image">
+                                </div>
+                            </div>
+
+                            <!-- Carousel Indicators -->
+                            <div class="carousel-indicators">
+                                <span class="indicator active" onclick="goToSlide(0)"></span>
+                                <span class="indicator" onclick="goToSlide(1)"></span>
+                                <span class="indicator" onclick="goToSlide(2)"></span>
+                                <span class="indicator" onclick="goToSlide(3)"></span>
+                                <span class="indicator" onclick="goToSlide(4)"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features">
+    <section class="features-section">
         <div class="container">
             <div class="features-grid">
-                <div class="feature-item">
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3>ของแท้ 100%</h3>
-                    <p>รับประกันสินค้าแท้จากแบรนด์ดังทั่วโลก</p>
+                    <h3 class="feature-title">ของแท้ 100%</h3>
+                    <p class="feature-text">รับประกันสินค้าแท้จากแบรนด์</p>
                 </div>
-                <div class="feature-item">
+                
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-truck"></i>
                     </div>
-                    <h3>จัดส่งฟรี</h3>
-                    <p>เมื่อสั่งซื้อครบ 5,000 บาท ทั่วประเทศ</p>
+                    <h3 class="feature-title">จัดส่งฟรี</h3>
+                    <p class="feature-text">เมื่อสั่งซื้อครบ 5,000 บาท</p>
                 </div>
-                <div class="feature-item">
+                
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-credit-card"></i>
                     </div>
-                    <h3>ผ่อนชำระ 0%</h3>
-                    <p>สูงสุด 10 เดือน ผ่านบัตรเครดิต</p>
+                    <h3 class="feature-title">ผ่อนชำระ 0%</h3>
+                    <p class="feature-text">สูงสุด 10 เดือน</p>
                 </div>
-                <div class="feature-item">
+                
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-undo"></i>
                     </div>
-                    <h3>คืนสินค้า 7 วัน</h3>
-                    <p>ไม่พอใจ สามารถคืนสินค้าได้ทันที</p>
+                    <h3 class="feature-title">รับคืน/เปลี่ยนสินค้า</h3>
+                    <p class="feature-text">ภายใน 7 วัน</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Featured Products Section -->
-    <section class="products-section">
+    <section class="featured-section">
         <div class="container">
             <h2 class="section-title">สินค้าแนะนำ</h2>
             <p class="section-subtitle">เลือกจากคอลเลกชันกระเป๋าหรูหราที่ได้รับความนิยม</p>
+            
             <div class="products-grid" id="featured-products">
                 <!-- Products will be loaded here by JavaScript -->
             </div>
-            <div style="text-align: center;">
-                <a href="shop.html" class="btn btn-secondary">ดูสินค้าทั้งหมด</a>
+            
+            <div class="section-footer">
+                <a href="shop.html" class="btn btn-outline">ดูสินค้าทั้งหมด</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -106,10 +183,12 @@
                 </div>
                 <div class="footer-section">
                     <h3>ลิงก์ด่วน</h3>
-                    <a href="index.html">หน้าหลัก</a>
-                    <a href="shop.html">ร้านค้า</a>
-                    <a href="#contact">ติดต่อเรา</a>
-                    <a href="#">นโยบายความเป็นส่วนตัว</a>
+                    <ul>
+                        <li><a href="index.html">หน้าหลัก</a></li>
+                        <li><a href="shop.html">ร้านค้า</a></li>
+                        <li><a href="#contact">ติดต่อเรา</a></li>
+                        <li><a href="#">นโยบายความเป็นส่วนตัว</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section" id="contact">
                     <h3>ติดต่อเรา</h3>

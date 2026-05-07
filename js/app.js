@@ -1,6 +1,7 @@
 // Global variables
 let products = [];
 let cart = [];
+let currentCarouselIndex = 0;
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', function() {
@@ -9,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCartBadge();
     setupEventListeners();
     renderPage();
+    
+    // Start Carousel Auto-slide
+    startCarousel();
 });
 
 // Load products from JSON
@@ -16,6 +20,9 @@ async function loadProducts() {
     try {
         const response = await fetch('data/products.json');
         products = await response.json();
+        
+        // After products are loaded, re-render the parts that need them
+        renderPage();
     } catch (error) {
         console.error('Error loading products:', error);
     }
@@ -60,7 +67,7 @@ function renderPage() {
 // Render featured products on homepage
 function renderFeaturedProducts() {
     const container = document.getElementById('featured-products');
-    if (!container) return;
+    if (!container || products.length === 0) return;
     
     const featured = products.slice(0, 4);
     container.innerHTML = featured.map(product => createProductCard(product)).join('');
@@ -70,7 +77,7 @@ function renderFeaturedProducts() {
 // Render shop page with filtering
 function renderShop() {
     const container = document.getElementById('products-container');
-    if (!container) return;
+    if (!container || products.length === 0) return;
     
     container.innerHTML = products.map(product => createProductCard(product)).join('');
     attachAddToCartListeners();
@@ -130,13 +137,57 @@ function addToCart(productId) {
     }
     
     saveCart();
-    showNotification(`${product.name} เพิ่มลงตะกร้าแล้ว!`);
+    alert(`${product.name} เพิ่มลงตะกร้าแล้ว!`);
 }
 
-// Show notification
-function showNotification(message) {
-    alert(message);
+// Carousel Functionality
+function startCarousel() {
+    setInterval(() => {
+        nextSlide();
+    }, 5000);
 }
+
+window.nextSlide = function() {
+    const items = document.querySelectorAll('.carousel-item');
+    const indicators = document.querySelectorAll('.indicator');
+    if (items.length === 0) return;
+    
+    items[currentCarouselIndex].classList.remove('active');
+    indicators[currentCarouselIndex].classList.remove('active');
+    
+    currentCarouselIndex = (currentCarouselIndex + 1) % items.length;
+    
+    items[currentCarouselIndex].classList.add('active');
+    indicators[currentCarouselIndex].classList.add('active');
+};
+
+window.prevSlide = function() {
+    const items = document.querySelectorAll('.carousel-item');
+    const indicators = document.querySelectorAll('.indicator');
+    if (items.length === 0) return;
+    
+    items[currentCarouselIndex].classList.remove('active');
+    indicators[currentCarouselIndex].classList.remove('active');
+    
+    currentCarouselIndex = (currentCarouselIndex - 1 + items.length) % items.length;
+    
+    items[currentCarouselIndex].classList.add('active');
+    indicators[currentCarouselIndex].classList.add('active');
+};
+
+window.goToSlide = function(index) {
+    const items = document.querySelectorAll('.carousel-item');
+    const indicators = document.querySelectorAll('.indicator');
+    if (items.length === 0 || index >= items.length) return;
+    
+    items[currentCarouselIndex].classList.remove('active');
+    indicators[currentCarouselIndex].classList.remove('active');
+    
+    currentCarouselIndex = index;
+    
+    items[currentCarouselIndex].classList.add('active');
+    indicators[currentCarouselIndex].classList.add('active');
+};
 
 // Setup filter buttons
 function setupFilterButtons() {
