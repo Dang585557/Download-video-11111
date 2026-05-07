@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Boutique - Premium Luxury Bags</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-main">LUXE</span>
+                <span class="logo-sub">BOUTIQUE</span>
+            </div>     
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link">หน้าหลัก</a>
+                <a href="#products" class="nav-link">สินค้า</a>
+                <a href="#brands" class="nav-link">แบรนด์</a>
+                <a href="#new" class="nav-link">คอลเลกชันใหม่</a>
+                <a href="#about" class="nav-link">เกี่ยวกับเรา</a>
+                <a href="#reviews" class="nav-link">รีวิว</a>
+                <a href="#contact" class="nav-link">ติดต่อเรา</a>
+            </nav>            
+            <div class="nav-icons">
+                <a href="#" class="icon-btn" title="ค้นหา">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="#" class="icon-btn" title="บัญชี">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="cart.html" class="icon-btn cart-btn" title="ตะกร้า">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="spotlight spotlight-1"></div>
+            <div class="spotlight spotlight-2"></div>
+            <div class="spotlight spotlight-3"></div>
+        </div
+
+  <div class="hero-container">
+            <!-- Left Content -->
+            <div class="hero-left">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="title-word">LUXURY</span>
+                        <span class="title-word highlight">BEYOND TIME</span>
+                    </h1>                  
+                    <p class="hero-subtitle">
+                        รวมคอลเลกชันกระเป๋าแบรนด์เนมแท้ 100%<br>
+                        GUCCI, LOUIS VUITTON, CHANEL, DIOR และอื่นๆ
+                    </p>                  
+                    <a href="#products" class="btn-primary">SHOP NOW</a>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="prevSlide()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next" onclick="nextSlide()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Right Content - Display Stands -->
+            <div class="hero-right">
+                <div class="display-container">
+                    <!-- Main Display Base -->
+                    <div class="display-base"></div>
+                    <!-- Display Stand 1 - Gucci (Front Left) -->
+                    <div class="display-stand stand-1">
+                        <div class="stand-pole"></div>
+                        <div class="stand-platform"></div>
+                        <div class="product-wrapper">
+                            <img src="images/gucci.png" alt="Gucci Bag" class="product-image">
+                        </div>
+                    </div>
+                    <!-- Display Stand 2 - Dior (Back Center) -->
+                    <div class="display-stand stand-2">
+                        <div class="stand-pole"></div>
+                        <div class="stand-platform"></div>
+                        <div class="product-wrapper">
+                            <img src="images/dior.png" alt="Dior Bag" class="product-image">
+                            <div class="brand-tag">CHRISTIAN DIOR</div>
+                        </div>
+                    </div>
+                    <!-- Display Stand 3 - Chanel (Front Right) -->
+                    <div class="display-stand stand-3">
+                        <div class="stand-pole"></div>
+                        <div class="stand-platform"></div>
+                        <div class="product-wrapper">
+                            <img src="images/chanel.png" alt="Chanel Bag" class="product-image">
+                        </div>
+                    </div>
+                    <!-- Display Stand 4 - LV (Side Right) -->
+                    <div class="display-stand stand-4">
+                        <div class="stand-pole"></div>
+                        <div class="stand-platform"></div>
+                        <div class="product-wrapper">
+                            <img src="images/lv.png" alt="Louis Vuitton Bag" class="product-image">
+                        </div>
+                    </div>
+                    <!-- Ambient Light -->
+                    <div class="ambient-light"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel Indicators -->
+        <div class="carousel-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+            <span class="dot" onclick="goToSlide(4)"></span>
+        </div>
+    </section>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 class="feature-title">ของแท้ 100%</h3>
+                <p class="feature-text">รับประกันสินค้าแท้จากแบรนด์</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3 class="feature-title">จัดส่งฟรี</h3>
+                <p class="feature-text">เมื่อสั่งซื้อครบ 5,000 บาท</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3 class="feature-title">ผ่อนชำระ 0%</h3>
+                <p class="feature-text">สูงสุด 10 เดือน</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-undo"></i>
+                </div>
+                <h3 class="feature-title">รับคืน/เปลี่ยนสินค้า</h3>
+                <p class="feature-text">ภายใน 7 วัน</p>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Products Section -->
+    <section class="featured-products" id="products">
+        <div class="section-header">
+            <h2 class="section-title">สินค้าแนะนำ</h2>
+            <p class="section-subtitle">เลือกจากคอลเลกชันกระเป๋าหรูหราที่ได้รับความนิยม</p>
+        </div>
+        <div class="products-grid" id="featured-products">
+            <!-- Products loaded by JavaScript -->
+        </div>
+        <div class="section-footer">
+            <a href="shop.html" class="btn-secondary">ดูสินค้าทั้งหมด</a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>เกี่ยวกับเรา</h3>
+                    <p>Luxe Boutique เป็นแหล่งรวมกระเป๋าแบรนด์เนมแท้ 100% จากทั่วทุกมุมโลก พร้อมบริการที่ดีที่สุด</p>
+                </div>
+                <div class="footer-section">
+                    <h3>ลิงก์ด่วน</h3>
+                    <ul>
+                        <li><a href="#home">หน้าหลัก</a></li>
+                        <li><a href="#products">ร้านค้า</a></li>
+                        <li><a href="#contact">ติดต่อเรา</a></li>
+                        <li><a href="#">นโยบายความเป็นส่วนตัว</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" id="contact">
+                    <h3>ติดต่อเรา</h3>
+                    <p><i class="fab fa-line"></i> LINE: @luxeboutique</p>
+                    <p><i class="fab fa-instagram"></i> Instagram: @luxeboutique.th</p>
+                    <p><i class="fas fa-phone"></i> โทร: 081-234-5678</p>
+                    <p><i class="fas fa-envelope"></i> อีเมล: info@luxeboutique.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Luxe Boutique. สงวนลิขสิทธิ์ทั้งหมด</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
