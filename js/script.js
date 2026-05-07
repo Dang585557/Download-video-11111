@@ -104,7 +104,7 @@ function displayCartItems() {
     if (!container) return;
     
     if (cart.length === 0) {
-        container.innerHTML = '<p style="text-align: center; padding: 2rem;">ตะกร้าของคุณว่างเปล่า</p>';
+        container.innerHTML = '<p style="text-align: center; padding: 2rem; color: #cccccc;">ตะกร้าของคุณว่างเปล่า</p>';
         document.getElementById("total-price").textContent = '฿0.00';
         return;
     }
