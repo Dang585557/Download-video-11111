@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxe Boutique - Luxury Bags Shop</title>
+    <title>ร้านค้า - Luxe Boutique</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -21,8 +21,8 @@
                 <ul class="nav-menu">
                     <li><a href="index.html">หน้าหลัก</a></li>
                     <li><a href="shop.html">ร้านค้า</a></li>
-                    <li><a href="#about">เกี่ยวกับเรา</a></li>
-                    <li><a href="#contact">ติดต่อเรา</a></li>
+                    <li><a href="index.html#about">เกี่ยวกับเรา</a></li>
+                    <li><a href="index.html#contact">ติดต่อเรา</a></li>
                 </ul>
                 <div class="nav-icons">
                     <a href="#" title="ค้นหา"><i class="fas fa-search"></i></a>
@@ -36,62 +36,24 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>LUXURY BEYOND TIME</h1>
-            <p>รวมคอลเลกชันกระเป๋าแบรนด์เนมแท้ 100%</p>
-            <p style="font-size: 1rem; margin-bottom: 2rem;">GUCCI • LOUIS VUITTON • CHANEL • DIOR</p>
-            <a href="shop.html" class="btn">เลือกซื้อสินค้า</a>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>ของแท้ 100%</h3>
-                    <p>รับประกันสินค้าแท้จากแบรนด์ดังทั่วโลก</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <h3>จัดส่งฟรี</h3>
-                    <p>เมื่อสั่งซื้อครบ 5,000 บาท ทั่วประเทศ</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <h3>ผ่อนชำระ 0%</h3>
-                    <p>สูงสุด 10 เดือน ผ่านบัตรเครดิต</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-undo"></i>
-                    </div>
-                    <h3>คืนสินค้า 7 วัน</h3>
-                    <p>ไม่พอใจ สามารถคืนสินค้าได้ทันที</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products Section -->
+    <!-- Shop Section -->
     <section class="products-section">
         <div class="container">
-            <h2 class="section-title">สินค้าแนะนำ</h2>
-            <p class="section-subtitle">เลือกจากคอลเลกชันกระเป๋าหรูหราที่ได้รับความนิยม</p>
-            <div class="products-grid" id="featured-products">
-                <!-- Products will be loaded here by JavaScript -->
+            <h2 class="section-title">ร้านค้า</h2>
+            <p class="section-subtitle">เลือกจากคอลเลกชันกระเป๋าหรูหราที่ครบครัน</p>
+
+            <!-- Filters -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">ทั้งหมด</button>
+                <button class="filter-btn" data-filter="Gucci">Gucci</button>
+                <button class="filter-btn" data-filter="Louis Vuitton">Louis Vuitton</button>
+                <button class="filter-btn" data-filter="Chanel">Chanel</button>
+                <button class="filter-btn" data-filter="Dior">Dior</button>
             </div>
-            <div style="text-align: center;">
-                <a href="shop.html" class="btn btn-secondary">ดูสินค้าทั้งหมด</a>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-container">
+                <!-- Products will be loaded here by JavaScript -->
             </div>
         </div>
     </section>
@@ -108,10 +70,10 @@
                     <h3>ลิงก์ด่วน</h3>
                     <a href="index.html">หน้าหลัก</a>
                     <a href="shop.html">ร้านค้า</a>
-                    <a href="#contact">ติดต่อเรา</a>
+                    <a href="index.html#contact">ติดต่อเรา</a>
                     <a href="#">นโยบายความเป็นส่วนตัว</a>
                 </div>
-                <div class="footer-section" id="contact">
+                <div class="footer-section">
                     <h3>ติดต่อเรา</h3>
                     <p><i class="fab fa-line"></i> LINE: @luxeboutique</p>
                     <p><i class="fab fa-instagram"></i> Instagram: @luxeboutique.th</p>
